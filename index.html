@@ -6,17 +6,34 @@
         <meta name="description" content="Please, no">
         <meta name="viewport" content="width=device-width">
         <style>
-          body {
-            text-align: center;
-          }
           p, a {
             color: grey;
+          }
+          .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+          }
+          .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          h1 {
+            font-size: 100px;
           }
         </style>
     </head>
     <body>
-      <h1>Please, no.</h1>
-      <p>You can forward any webpage to <a href="https://pleaseno.me">pleaseno.me</a> so that people know the answers to the questions like shouldiusephp.com or shoulditestprivatemethods.com.</p>
-      <p>Want to contribute to this page? Go open a PR on its <a href="https://github.com/backmeupplz/pleaseno">GitHub</a>.</p>
+      <div class="centered">
+        <h1>Please, no.</h1>
+      </div>
+      <div class="footer">
+        <p>You can forward any webpage to <a href="https://pleaseno.me">pleaseno.me</a> so that people know the answers to the questions like shouldiusephp.com or shoulditestprivatemethods.com.</p>
+        <p>Want to contribute to this page? Go open a PR on its <a href="https://github.com/backmeupplz/pleaseno">GitHub</a>.</p>
+      </div>
     </body>
 </html>
