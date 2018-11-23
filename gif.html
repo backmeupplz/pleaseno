@@ -27,15 +27,29 @@
             font-size: 100px;
           }
         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+          $(function(){
+            $.get("https://api.giphy.com/v1/gifs/random?api_key=5oLXGhIOw5r18zmB6XDUpaUX3VqWVKdy&tag=no", function(data, status) {
+              if (status !== "success") {
+                return;
+              }
+              var url = data.data.images.fixed_height.url;
+              $(".centered").empty();
+              $(".centered").append("<center><img src=\"" + url + "\"></center>");
+
+              $(".footer").append("<img src=\"giphy.png\">");
+            });
+          });
+        </script>
     </head>
     <body>
       <div class="centered">
         <h1>Please, no.</h1>
-        <div id="gif"></div>
       </div>
       <div class="footer">
         <p>You can forward any webpage to <a href="https://pleaseno.me">pleaseno.me</a> so that people know the answers to the questions like shouldiusephp.com or shoulditestprivatemethods.com.</p>
-        <p>Want to contribute to this page? Go open a PR on its <a href="https://github.com/backmeupplz/pleaseno">GitHub</a>. Try <a href="https://pleaseno.me/gif.html">gif version</a>.</p>
+        <p>Want to contribute to this page? Go open a PR on its <a href="https://github.com/backmeupplz/pleaseno">GitHub</a>. Try <a href="https://pleaseno.me">no gif version</a></p>
       </div>
     </body>
 </html>
