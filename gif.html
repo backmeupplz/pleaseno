@@ -6,7 +6,7 @@
         <meta name="description" content="Please, no.">
         <meta name="viewport" content="width=device-width">
         <style>
-          p, a {
+          p, a, h1 {
             color: #c6c6c6;
           }
           .footer {
@@ -23,9 +23,6 @@
             left: 50%;
             transform: translate(-50%, -60%);
           }
-          h1 {
-            font-size: 100px;
-          }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
@@ -35,8 +32,7 @@
                 return;
               }
               var url = data.data.images.fixed_height.url;
-              $(".centered").empty();
-              $(".centered").append("<center><img src=\"" + url + "\"></center>");
+              $("#gif").append("<center><img src=\"" + url + "\"></center>");
 
               $(".footer").append("<img src=\"giphy.png\">");
             });
@@ -46,6 +42,7 @@
     <body>
       <div class="centered">
         <h1>Please, no.</h1>
+        <div id="gif"></div>
       </div>
       <div class="footer">
         <p>You can forward any webpage to <a href="https://pleaseno.me">pleaseno.me</a> so that people know the answers to the questions like shouldiusephp.com or shoulditestprivatemethods.com.</p>
