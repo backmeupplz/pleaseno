@@ -32,11 +32,11 @@
           $(function(){
             $.get("https://api.giphy.com/v1/gifs/random?api_key=HkpiOR0DiobevKCpvPjVlwmB14IzwzpU&tag=no", function(data, status) {
               if (status !== "success") {
-                console.log(status);
                 return;
               }
               var url = data.data.images.fixed_height.url;
               $("#gif").append("<center><img src=\"" + url + "\"></center>");
+              $("#.footer").append("<img src=\"giphy.png\">");
             });
           });
         </script>
