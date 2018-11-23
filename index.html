@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Please, no.</title>
-        <meta name="description" content="Please, no">
+        <meta name="description" content="Please, no.">
         <meta name="viewport" content="width=device-width">
         <style>
           p, a {
@@ -27,10 +27,24 @@
             font-size: 100px;
           }
         </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+          $(function(){
+            $.get("http://api.giphy.com/v1/gifs/random?api_key=HkpiOR0DiobevKCpvPjVlwmB14IzwzpU&tag=no", function(data, status) {
+              if (status !== "success") {
+                console.log(status);
+                return;
+              }
+              var url = data.data.images.fixed_height.url;
+              $("#gif").append("<center><img src=\"" + url + "\"></center>");
+            });
+          });
+        </script>
     </head>
     <body>
       <div class="centered">
         <h1>Please, no.</h1>
+        <div id="gif"></div>
       </div>
       <div class="footer">
         <p>You can forward any webpage to <a href="https://pleaseno.me">pleaseno.me</a> so that people know the answers to the questions like shouldiusephp.com or shoulditestprivatemethods.com.</p>
